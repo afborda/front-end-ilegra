@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fd557381-9451-4e84-bdb1-3541fa9cc050" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1VPCmvip4zAAISdy8g7vlF80xhb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tema1" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd557381-9451-4e84-bdb1-3541fa9cc050" name="Default Changelist" comment="" />
+      <created>1577145505229</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577145505229</updated>
+      <workItem from="1577145506765" duration="903000" />
+      <workItem from="1577206712093" duration="72000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1921" y="191" width="800" height="675" key="#Web_Browsers" timestamp="1577146260712">
+      <screen x="1366" y="11" width="1920" height="1080" />
+    </state>
+    <state x="1921" y="191" width="800" height="675" key="#Web_Browsers/1366.11.1920.1080/0.0.1366.768@1366.11.1920.1080" timestamp="1577146260712" />
+    <state x="1784" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577145862693">
+      <screen x="1366" y="11" width="1920" height="1080" />
+    </state>
+    <state x="1784" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog/1366.11.1920.1080/0.0.1366.768@1366.11.1920.1080" timestamp="1577145862693" />
+    <state x="2104" y="286" width="424" height="482" key="FileChooserDialogImpl" timestamp="1577206779880">
+      <screen x="1366" y="11" width="1920" height="1080" />
+    </state>
+    <state x="2104" y="286" width="424" height="482" key="FileChooserDialogImpl/1366.11.1920.1080/0.0.1366.768@1366.11.1920.1080" timestamp="1577206779880" />
+  </component>
+</project>

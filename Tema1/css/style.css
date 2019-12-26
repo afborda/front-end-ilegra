@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.title-section {
+  padding-top: 2rem;
+  font-size: 1.5em;
+  color: #000000;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* Menu */
+
+.menu-Header {
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-item {
+  display: flex;
+  list-style: none;
+}
+
+.items {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 1.2em;
+  padding: 33% 10px;
+  transition: 0.3s ease-in;
+}
+
+.items:hover {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 100%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+
+  color: #fff;
+}
+
+.logo-lineage {
+  display: flex;
+  width: 70px;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-logo {
+  max-width: 50px;
+  max-height: 50px;
+  margin-left: 10px;
+}
+
+/* Home */
+
+.home {
+  display: flex;
+  height: 100vh;
+  background: url("https://abnerfonseca.com.br/ilegra/tema1/assets/br_cell.jpg")
+    center no-repeat;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Class */
+
+.class-game {
+  background: url("https://abnerfonseca.com.br/ilegra/tema1/assets/bg_class.jpg")
+    center;
+}
+.sub-title-class {
+  margin-top: 5px;
+  font-size: 1em;
+  text-align: center;
+}
+
+.menu-item-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+
+.name-class-fighter {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.class-game-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.title-class-h3 {
+  text-align: center;
+  font-size: 1.3em;
+  margin: 1em;
+  font-weight: bold;
+}
+.bold-status {
+  font-weight: 600;
+}
+
+/*Footer*/
+
+.text-footer-style {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.425);
+}
+
+.icons-footer {
+  width: 32px;
+  height: 32px;
+}
+
+.footer {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
+
+/* History */
+
+.history {
+  display: flex;
+  background: url("https://abnerfonseca.com.br/ilegra/tema1/assets/bg_history.jpg")
+    center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1em;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1%;
+}
+
+.fundo-history {
+  display: flex;
+  justify-content: center;
+}
+
+.title-history {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 2rem 0;
+}
+
+.fundo-history p {
+  text-align: justify;
+  letter-spacing: 1px;
+  line-height: 1.1em;
+}
+
+@media (min-width: 600px) {
+  .home {
+    background: url("https://abnerfonseca.com.br/ilegra/tema1/assets/bg_home.jpg")
+      center no-repeat;
+    background-size: cover;
+  }
+  .fundo-history p {
+    letter-spacing: 3px;
+    line-height: 2em;
+    text-align: justify;
+    padding: 3em;
+  }
+}
