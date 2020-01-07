@@ -1,0 +1,20 @@
+{
+	"version": 3,
+	"file": "styles.css",
+	"sources": [
+		"../../../ilegraTemasTalentos/jts-frontend/abner-fonseca/Tema4/scss/styles.scss",
+		"../../../ilegraTemasTalentos/jts-frontend/abner-fonseca/Tema4/scss/_global.scss",
+		"../../../ilegraTemasTalentos/jts-frontend/abner-fonseca/Tema4/scss/_nav.scss",
+		"../../../ilegraTemasTalentos/jts-frontend/abner-fonseca/Tema4/scss/_inputs.scss",
+		"../../../ilegraTemasTalentos/jts-frontend/abner-fonseca/Tema4/scss/_buttonBase.scss"
+	],
+	"sourcesContent": [
+		"//@import \"reset.scss\";\n@import \"global.scss\";\n@import \"nav.scss\";\n@import \"inputs.scss\";\n@import \"buttonBase.scss\";",
+		"@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');\n$font-primary: 'Roboto',\nsans-serif;\n\n\n$color-primary: #03A9F7;",
+		".header {\n  width: 100%;\n  height: 30px;\n  background-color: $color-primary;\n}\n\n.header__text {\n  font-family: $font-primary;\n}",
+		"",
+		""
+	],
+	"names": [],
+	"mappings": "ACAA,OAAO,CAAC,kEAAI;;ACAZ,AAAA,OAAO,CAAC;EACN,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,gBAAgB,EDEF,OAAO;CCDtB;;;AAED,AAAA,aAAa,CAAC;EACZ,WAAW,EDNE,QAAQ,EACvB,UAAU;CCMT"
+}

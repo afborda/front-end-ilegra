@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+/* line 1, ../../jts-frontend/abner-fonseca/Tema4/scss/_nav.scss */
+.header {
+  width: 100%;
+  height: 30px;
+  background-color: #03A9F7;
+}
+
+/* line 7, ../../jts-frontend/abner-fonseca/Tema4/scss/_nav.scss */
+.header__text {
+  font-family: "Roboto", sans-serif;
+}
+
+/*# sourceMappingURL=styles.css.map */
