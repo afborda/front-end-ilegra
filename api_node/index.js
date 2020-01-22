@@ -1,8 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const con = require("./db.connect");
+const connectDB = require("./connectConfiguration");
+const {port} = require("./config");
 const app = express();
-const port = 3000;
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -11,7 +13,7 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => res.send({ error: true, message: "Funciona" }));
 
 app.get("/books", (req, res) => {
-  con.query("select * from book", (error, result, fields) => {
+  connectDB.query("select * from book", (error, result, fields) => {
     if (error) throw error;
     return res.send({ error: false, data: result, message: "Book List" });
   });
@@ -25,7 +27,7 @@ app.get("/book/:id", (req, res) => {
       message: "Please Provide Book ID"
     });
   }
-  con.query(
+  connectDB.query(
     "select * from book where id=?",
     book_id,
     (error, result, fields) => {
@@ -42,7 +44,7 @@ app.post("/book", (req, res) => {
       .status(400)
       .send({ error: true, message: "Please provide book" });
   }
-  con.query("insert into book set ? ", book, (error, result, fields) => {
+  connectDB.query("insert into book set ? ", book, (error, result, fields) => {
     if (error) throw error;
     return res.send({
       error: false,
@@ -61,7 +63,7 @@ app.put("/book", (req, res) => {
       .status(400)
       .send({ error: book, message: "Please provide book and Book ID" });
   }
-  con.query(
+  connectDB.query(
     "UPDATE book SET ? WHERE id = ? ",
     [book, book_id],
     (error, result, fields) => {
@@ -82,7 +84,7 @@ app.delete("/book", (req, res) => {
       .status(400)
       .send({ error: true, message: "Please provide Book" });
   }
-  con.query(
+  connectDB.query(
     "delete from book where id = ?",
     [book_id],
     (error, result, fields) => {
