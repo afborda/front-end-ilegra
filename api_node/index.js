@@ -1,52 +1,49 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const connectDB = require("./connectConfiguration");
-const {port} = require("./config");
+const { port } = require("./config");
 const app = express();
-
-
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => res.send({ error: true, message: "Funciona" }));
-
-app.get("/books", (req, res) => {
-  connectDB.query("select * from book", (error, result, fields) => {
-    if (error) throw error;
-    return res.send({ error: false, data: result, message: "Book List" });
-  });
-});
-
-app.get("/book/:id", (req, res) => {
-  let book_id = req.params.id;
-  if (!book_id) {
-    return res.status(400).send({
+function checkBookIdExists(req, res, next) {
+  console.log("Entrei nessa bagulho " + !!req.params.id);
+  if (req.params.id) {
+    return res.status(400).json({
       error: true,
       message: "Please Provide Book ID"
     });
   }
-  connectDB.query(
-    "select * from book where id=?",
-    book_id,
-    (error, result, fields) => {
-      if (error) throw error;
-      return res.send({ error: false, data: result[0], message: "Book" });
-    }
-  );
+  return next();
+}
+
+app.get("/books", (req, res) => {
+  connectDB.query("select * from book", (error, result, fields) => {
+    if (error) throw error;
+    return res.json({ error: false, data: result, message: "Book List" });
+  });
+});
+
+app.get("/book/:id", checkBookIdExists, (req, res) => {
+  const { id } = req.params;
+  connectDB.query(`select * from book where id=${id}`, (error, result) => {
+    if (error) throw error;
+    return res.json({ error: false, data: result[0], message: "Book" });
+  });
 });
 
 app.post("/book", (req, res) => {
-  let book = req.body;
+  const book = req.body;
   if (!book) {
     return res
       .status(400)
-      .send({ error: true, message: "Please provide book" });
+      .json({ error: true, message: "Please provide book" });
   }
   connectDB.query("insert into book set ? ", book, (error, result, fields) => {
     if (error) throw error;
-    return res.send({
+    return res.json({
       error: false,
       data: result,
       message: "New Book has been create successfully"
@@ -54,21 +51,21 @@ app.post("/book", (req, res) => {
   });
 });
 
-app.put("/book", (req, res) => {
-  let book_id = req.body.id;
-  let book = req.body;
+app.put("/book/:id", (req, res) => {
+  const { id } = req.params;
+  const book = req.body;
 
-  if (!book_id || !book) {
+  if (!book) {
     return res
       .status(400)
-      .send({ error: book, message: "Please provide book and Book ID" });
+      .json({ error: book, message: "Please provide book and Book ID" });
   }
   connectDB.query(
-    "UPDATE book SET ? WHERE id = ? ",
-    [book, book_id],
+    `UPDATE book SET ? WHERE id = ${id} `,
+    book,
     (error, result, fields) => {
       if (error) throw error;
-      return res.send({
+      return res.json({
         error: false,
         data: result,
         message: "Book has been update successfully"
@@ -77,25 +74,21 @@ app.put("/book", (req, res) => {
   );
 });
 
-app.delete("/book", (req, res) => {
-  let book_id = req.body.id;
-  if (!book_id) {
+app.delete("/book/:id", (req, res) => {
+  const { id } = req.params;
+  if (!id) {
     return res
       .status(400)
-      .send({ error: true, message: "Please provide Book" });
+      .json({ error: true, message: "Please provide Book" });
   }
-  connectDB.query(
-    "delete from book where id = ?",
-    [book_id],
-    (error, result, fields) => {
-      if (error) throw error;
-      return res.send({
-        error: false,
-        data: result,
-        message: "Book has been deleted successfully"
-      });
-    }
-  );
+  connectDB.query(`delete from book where id = ${id}`, (error, result) => {
+    if (error) throw error;
+    return res.json({
+      error: false,
+      data: result,
+      message: "Book has been deleted successfully"
+    });
+  });
 });
 
 app.listen(port);

@@ -6,7 +6,6 @@ const connectDB = mysql.createConnection({
   password,
   database
 });
-console.log(connectDB);
 connectDB.connect(err => {
   if (err) throw err;
 });
