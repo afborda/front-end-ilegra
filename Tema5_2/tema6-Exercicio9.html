@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercicio 9</title>
+  </head>
+  <body>
+    <script>
+      // ### Exercicio 9
+
+      //  Implemente o método `calculaValorTotalDaCompra` que recebe quatro parâmetros:
+      //   - produtos: Lista com o nome dos produtos comprados
+      //   - cidade: String que representa o nome da cidade
+      //   - caixa: Mapa que contém relação de produtos e preços
+      //   - fretes: Mapa que contém relação de cidades e fretes
+
+      //  Calcule o preço total da compra junto com o frete de acordo com as tabelas a seguir:
+
+      //  Produtos:
+
+      //  Produto | Preço
+      //  --------|------
+      //  | Arroz | 7.10
+      //  | Feijão | 2.30
+      //  | Macarrão | 4.70
+      //  | Refrigerante | 3.00
+
+      //  Fretes:
+
+      //  | Cidade | Frete
+      //  ---------|-------
+      //  | São Paulo | 10.10
+      //  | Rio de Janeiro | 12.30
+      //  | Brasília | 14.70
+      //  | Outros | 13.00
+
+      //  ```
+      //  calculaValorTotalDaCompra(['Arroz'], 'São Paulo', caixa, fretes)
+
+      //  // saída
+      //  // 7.20
+      //  ```
+
+      const produtos = [
+        { nome: "Arroz", valor: 7.1 },
+        { nome: "Feijão", valor: 2.3 },
+        { nome: "Macarrão", valor: 4.7 },
+        { nome: "Refrigerante", valor: 3.0 }
+      ];
+
+      const frete = [
+        { nome: "São Paulo ", valor: 10.1 },
+        { nome: "Rio de Janeiro", valor: 12.3 },
+        { nome: "Brasília", valor: 14.7 },
+        { nome: "Outros", valor: 13.0 }
+      ];
+
+      function calculaValorTotalDaCompra(produtos) {
+        return produtos;
+      }
+
+      console.log(calculaValorTotalDaCompra("Arroz", "São Paulo"));
+    </script>
+  </body>
+</html>

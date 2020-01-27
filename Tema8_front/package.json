@@ -1,0 +1,23 @@
+{
+  "name": "Tema8_front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "js-spotify-wrapper": "^1.1.7",
+    "node-fetch": "^2.6.0",
+    "spotify-web-api-node": "^4.0.0",
+    "spotify-wrapper": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

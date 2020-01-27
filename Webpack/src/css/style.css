@@ -1,0 +1,27 @@
+.botao {
+  background-color: red;
+  color: white;
+  border: 0px;
+  padding: 20px;
+}
+
+.galeria,
+.flip,
+.flash {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  background-size: cover;
+}
+
+.galeria {
+  background-image: url("../images/helloquence-5fNmWej4tAA-unsplash.jpg");
+}
+
+.flip {
+  background-image: url("../images/christian-joudrey-DuD5D3lWC3c-unsplash.jpg");
+}
+
+.flash {
+  background-image: url("../images/frank-mckenna-4V8JxijgZ_c-unsplash.jpg");
+}

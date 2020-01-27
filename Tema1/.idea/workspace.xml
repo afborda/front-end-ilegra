@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c11629c-71bd-4e19-b4ec-3d0f65f32f3b" name="Default Changelist" comment="" />
+    <list default="true" id="0c11629c-71bd-4e19-b4ec-3d0f65f32f3b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1VTkDYd0uoUIZ5D7m4rmkIJEhGX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -16,6 +22,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../api_node" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -56,10 +63,22 @@
       <option name="presentableId" value="Default" />
       <updated>1577284353724</updated>
       <workItem from="1577284358038" duration="2196000" />
+      <workItem from="1579646824374" duration="17000" />
+      <workItem from="1579646857356" duration="30000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2009" y="261" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579646835578">
+      <screen x="1366" y="11" width="1920" height="1080" />
+    </state>
+    <state x="2009" y="261" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1366.11.1920.1080/0.0.1366.768@1366.11.1920.1080" timestamp="1579646835578" />
+    <state x="2109" y="288" width="424" height="479" key="FileChooserDialogImpl" timestamp="1579646884560">
+      <screen x="1366" y="11" width="1920" height="1080" />
+    </state>
+    <state x="2109" y="288" width="424" height="479" key="FileChooserDialogImpl/1366.11.1920.1080/0.0.1366.768@1366.11.1920.1080" timestamp="1579646884560" />
   </component>
 </project>
