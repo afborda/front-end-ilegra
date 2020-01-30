@@ -1,0 +1,36 @@
+$primary: #f6f6f6;
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background: $primary;
+}
+
+.title{
+  text-align: center;
+  margin: 20px;
+  font-weight: bold
+}
+
+.center {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.center-form {
+  display: flex;
+  justify-content: center;
+}
+
+.movie_oviedetails{
+ margin:0 auto;
+}
+.btn-style{
+    color: #fff;
+    background: #cc0000;
+    width: 151px;
+    margin-left: 20px;
+}
+
+.img-styles{
+  margin-top:30px;
+}
