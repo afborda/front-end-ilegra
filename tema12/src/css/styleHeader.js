@@ -23,7 +23,6 @@ export const Navigation = styled.nav`
       margin: 0 10px 0 10px;
     }
     & p {
-      color: #fff;
     }
     & div {
       width: 50px;

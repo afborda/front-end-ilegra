@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navigation, HeaderStyle } from "../css/styleHeader";
 import svgCar from "../assets/supermarket.svg";
 import logoLoja from "../assets/logo_ricardo_eletro.png";
+import produtosContext from "../context/produtosContext";
 const Header = () => {
+  let val = useContext(produtosContext);
   return (
     <>
       <HeaderStyle>
@@ -20,7 +22,7 @@ const Header = () => {
             <li>
               <div>
                 <img src={svgCar} alt="Carrinho de copras" />
-                <p>0</p>
+                <p>{val}</p>
               </div>
             </li>
           </ul>
