@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Navigation = styled.nav`
+export const Navigation = styled.nav` 
   width: 1280px;
   display: flex;
   justify-content: space-between;
@@ -15,13 +15,14 @@ export const Navigation = styled.nav`
     display: flex;
   }
   ul {
-    align-items: center;
-
+    align-items: center; 
     display: flex;
     list-style: none;
+
     li {
       margin: 0 10px 0 10px;
     }
+   
     & p {
     }
     & div {
@@ -31,12 +32,14 @@ export const Navigation = styled.nav`
       justify-content: space-around;
       align-items: center;
       border-radius: 8px;
+      box-shadow: 0px 0px 5px 0px
     }
 
     & div img {
       width: 20px;
-    }
-  }
+    }  
+  } 
+ 
 `;
 
 export const HeaderStyle = styled.header`
