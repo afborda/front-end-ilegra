@@ -28,6 +28,13 @@ module.exports = {
         ]
       },
       {
+        test: /\.js$/,
+        loader: "babel-loader",
+        query: {
+          presets: ["es2015"]
+        }
+      },
+      {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
       }
