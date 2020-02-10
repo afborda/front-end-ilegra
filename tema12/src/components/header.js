@@ -3,48 +3,39 @@ import { Navigation, HeaderStyle } from "../css/styleHeader";
 import svgCar from "../assets/supermarket.svg";
 import logoLoja from "../assets/logo_ricardo_eletro.png";
 import { ProdutosContext } from "../context/produtosContext";
-import { CartContext } from "../context/cartContext";
+import Cart from "../components/cart";
 
 const Header = () => {
   let value = useContext(ProdutosContext);
-  let item = useContext(CartContext);
 
   return (
     <>
-
       <HeaderStyle>
         <Navigation>
-          <div>
-            <img src={logoLoja} alt="Logo Ricardo eletro" />
+          <div className="img-logo">
+            <img
+              className="img-logo--size"
+              src={logoLoja}
+              alt="Logo Ricardo eletro"
+            />
           </div>
-          <ul>
-            <li>
-              <p>Inicio</p>
+          <ul className="navigation-list">
+            <li className="navigation-list-item">
+              <p className="navigation-list-item--style">Inicio</p>
             </li>
-            <li>
-              <p>Produtos</p>
+            <li className="navigation-list-item">
+              <p className="navigation-list-item--style">Produtos</p>
             </li>
-            <li>
-              <div>
+            <li className="navigation-list-item">
+              <div className="navigation-list-cart--style">
                 <img src={svgCar} alt="Carrinho de compras" />
                 <p>{value}</p>
               </div>
-              <div className="cartContent" style={{
-                position: 'absolute',
-                right: 60,
-                height: 400,
-                width: 300,
-              }
-              }>
-                <ul>
-
-                </ul>
-              </div>
+              <Cart />
             </li>
           </ul>
         </Navigation>
       </HeaderStyle>
-
     </>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { StyleList } from "../css/styleItemList";
 import { items } from "../mock";
 import { buyItems } from "../buymock";
-import { ProdutosContext } from '../context/produtosContext';
+import { ProdutosContext } from "../context/produtosContext";
 import { CartContext } from "../context/cartContext";
 
 const ItemList = () => {
@@ -10,11 +10,9 @@ const ItemList = () => {
   const [item, setItem] = useContext(CartContext);
   const [newProduct, setNewProduct] = useState(buyItems);
 
-
   useEffect(() => {
     setCount(newProduct.length);
     setItem(newProduct);
-   
   }, [newProduct]);
 
   return (
@@ -25,7 +23,12 @@ const ItemList = () => {
           <h1 className="nome-protduto">{produto.nome}</h1>
           <p className="descricao-produto">{produto.descricao}</p>
           <p className="produto-preco"> R$:{produto.preco},00</p>
-          <button onClick={() => setNewProduct([...newProduct, produto])} className="botao-comprar">COMPRAR</button>
+          <button
+            onClick={() => setNewProduct([...newProduct, produto])}
+            className="botao-comprar"
+          >
+            COMPRAR
+          </button>
         </div>
       ))}
     </StyleList>

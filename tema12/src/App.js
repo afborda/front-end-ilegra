@@ -1,16 +1,15 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import Header from "./components/header";
 import ItemsList from "./components/itemList";
 import GlobalStyle from "./css/styleGlobal";
-import { Provider, ProdutosContext } from "./context/produtosContext";
-import { buyItems } from "./buymock";
-import {CartProvider} from '../src/context/cartContext';
+import { Provider } from "./context/produtosContext";
+import { CartProvider } from "../src/context/cartContext";
+import Cart from "./components/cart";
 
 const App = () => {
-
   return (
     <>
-      <CartProvider >
+      <CartProvider>
         <Provider>
           <Header />
           <ItemsList />
