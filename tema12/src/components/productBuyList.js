@@ -7,14 +7,14 @@ const ListProduct = ({ list }) => {
   return (
     <ul>
       {list.map(item => (
-        <Item key={item.id} item={item} />
+        <Item key={Math.random()} item={item} />
       ))}
     </ul>
   );
 };
 const Item = ({ item }) => {
   return (
-    <li>
+    <li key={Math.random()}>
       {item.nome} {item.preco}
     </li>
   );
