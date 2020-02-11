@@ -48,6 +48,8 @@ export const Navigation = styled.nav`
       background: #ffff;
       border-radius: 8px;
       box-shadow: 0px 0px 5px 0px;
+      padding: 20px;
+      overflow-y: auto;
     }
   }
 `;

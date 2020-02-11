@@ -1,22 +1,23 @@
 import React from "react";
+import { CartStyle, ItemsCartStyle } from "../css/styleCart";
 
 const ListProduct = ({ list }) => {
   if (!list) {
     return false;
   }
   return (
-    <ul>
+    <ItemsCartStyle className="item-cart">
       {list.map(item => (
         <Item key={Math.random()} item={item} />
       ))}
-    </ul>
+    </ItemsCartStyle>
   );
 };
 const Item = ({ item }) => {
   return (
-    <li key={Math.random()}>
-      {item.nome} {item.preco}
-    </li>
+    <ul className="lista-cart" key={Math.random()}>
+      <p>{item.nome}</p> <p>R${item.preco},00</p>
+    </ul>
   );
 };
 
