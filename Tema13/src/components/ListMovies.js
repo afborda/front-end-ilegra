@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Section } from "../css/listMovieStyle";
 import useAxios from "axios-hooks";
+import api from '../service/api';
 
-const ListMovies = props => {
-  const [{ data, loading }] = useAxios(
-    `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_SECRET_KYE}&s=${props.data}`
-  );
+const ListMovies = async (props) => {
+  const [data, setData] = useState([]);
 
-  useEffect(() => {}, [data]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      loadData();
+    }, 2000); 
+  }, [])
+
+  async function loadData() {
+    const comingdata = await api.get(`s=${props.data}`);
+    setData(comingdata);
+    console.log(comingdata)
+  }
 
   return (
     <Section>
-      {!loading ? (
+      {(
         <ul className="movie-list">
           {data.Search.map(movie => (
             <li key={movie.imdbID} className="resume-movie">
@@ -29,8 +39,6 @@ const ListMovies = props => {
             </li>
           ))}
         </ul>
-      ) : (
-        false
       )}
     </Section>
   );

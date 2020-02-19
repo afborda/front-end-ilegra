@@ -6,13 +6,12 @@ import ListMovies from "../components/ListMovies";
 const SearchMovie = () => {
   const [movieData, setMovieData] = useState("");
 
-  const searchMovieData = event => {
-    event.preventDefault();
-  };
 
   const handleChange = e => {
     setMovieData(e.target.value);
   };
+
+
 
   return (
     <div>
@@ -24,16 +23,17 @@ const SearchMovie = () => {
             className="search-form-input--style"
             type="text"
             placeholder="Informe nome do Filme"
+            onChange={handleChange}
           />
           <button
             className="search-form-button--style"
-            onClick={searchMovieData}
+            onClick={() => console.log('ola')}
           >
             Pesquisar
           </button>
         </form>
       </SearchMovieStyle>
-      {movieData !== "" ? <ListMovies data={movieData} /> : false}
+      {(movieData !== "") ? <ListMovies data={movieData} /> : false}
     </div>
   );
 };
