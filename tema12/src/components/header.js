@@ -6,7 +6,7 @@ import { ProdutosContext } from "../context/produtosContext";
 import Cart from "../components/cart";
 
 const Header = () => {
-  let value = useContext(ProdutosContext);
+  let cauntItem = useContext(ProdutosContext);
 
   return (
     <>
@@ -29,7 +29,7 @@ const Header = () => {
             <li className="navigation-list-item">
               <div className="navigation-list-cart--style">
                 <img src={svgCar} alt="Carrinho de compras" />
-                <p>{value}</p>
+                <p>{cauntItem}</p>
               </div>
               <Cart />
             </li>

@@ -18,14 +18,19 @@ const ItemList = () => {
   return (
     <StyleList>
       {items.map(produto => (
-        <div className="produto-item" key={produto.id}>
+        <div className="product-item" key={produto.id}>
           <img src={produto.fotos[0].src} alt={produto.fotos[0].alt} />
-          <h1 className="nome-protduto">{produto.nome}</h1>
-          <p className="descricao-produto">{produto.descricao}</p>
-          <p className="produto-preco"> R$:{produto.preco},00</p>
+          <h1 className="name-product">{produto.nome}</h1>
+          <p
+            className="
+product-description"
+          >
+            {produto.descricao}
+          </p>
+          <p className="product-price"> R$:{produto.preco},00</p>
           <button
             onClick={() => setNewProduct([...newProduct, produto])}
-            className="botao-comprar"
+            className="buy-button"
           >
             COMPRAR
           </button>

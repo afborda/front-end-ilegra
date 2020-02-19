@@ -6,26 +6,26 @@ export const StyleList = styled.main`
   flex-wrap: wrap;
   margin: 0 auto;
   padding: 30px;
-  .produto-item {
+  .product-item {
     max-width: 250px;
     margin: 0 auto;
     margin-top: 30px;
   }
-  .nome-protduto {
+  .name-product {
     color: #515c6f;
     font-size: 18px;
     padding: 10px;
   }
-  .descricao-produto {
+  .product-description {
     color: #515c6f;
   }
-  .produto-preco {
+  .product-price {
     padding: 15px 15px 15px 25px;
     color: #ff4d4d;
     font-weight: bold;
     font-size: 20px;
   }
-  .botao-comprar {
+  .buy-button {
     width: 100%;
     background: #ff4d4d;
     border-radius: 18px;
