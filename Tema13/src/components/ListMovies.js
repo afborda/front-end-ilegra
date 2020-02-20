@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Section } from "../css/listMovieStyle";
 import ModalMovie from "../components/ModalMovie";
-<<<<<<< HEAD
-import api from "../service/api";
-=======
 import api from "../services/api";
->>>>>>> 5482e31cca0380824397a3f7c4e849e7843dda97
 
-const ListMovies = props => {
-  const [dataMovie, setDataMovie] = useState(props.data);
+const ListMovies = ({ data }) => {
   const [openModal, setOpenModal] = useState(false);
   const [idMovie, setIdMovie] = useState("");
   const [listMovie, setListMovie] = useState([]);
 
-  const fetchUsers = async () => {
-    const getListMovie = await api.get(
-      `?apikey=${process.env.REACT_APP_SECRET_KYE}&s=${dataMovie}`
-    );
+  
+   
+ 
+
+
+  const loadData = async () => {
+    const getListMovie = await api.get(`/?apikey=${process.env.REACT_APP_SECRET_KYE}&s=${data}`);
     setListMovie(getListMovie);
+    console.log(listMovie);
+
   };
 
-  useEffect(() => {
-    fetchUsers(listMovie);
-  }, [listMovie]);
+  loadData();
 
   const handleClick = e => {
     setIdMovie(e.target.id);
@@ -33,13 +31,13 @@ const ListMovies = props => {
     return value.Search !== undefined;
   };
 
-  console.log("teste", listMovie);
+
 
   return (
     <Section>
       {validate(listMovie) ? (
         <ul className="movie-list">
-          {listMovie.data.Search.map(movie => (
+          {listMovie.Search.map(movie => (
             <li key={movie.imdbID} className="resume-movie">
               <img
                 className="resume-movie-img"
@@ -68,8 +66,8 @@ const ListMovies = props => {
           ))}
         </ul>
       ) : (
-        <h1>Filme Não Encontrado</h1>
-      )}
+          <h1>Filme Não Encontrado</h1>
+        )}
     </Section>
   );
 };
