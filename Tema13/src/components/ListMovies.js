@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Section } from "../css/listMovieStyle";
-<<<<<<< HEAD
 import ModalMovie from "../components/ModalMovie";
 <<<<<<< HEAD
 import api from "../service/api";
@@ -39,30 +38,6 @@ const ListMovies = props => {
   return (
     <Section>
       {validate(listMovie) ? (
-=======
-import useAxios from "axios-hooks";
-import api from '../service/api';
-
-const ListMovies = async (props) => {
-  const [data, setData] = useState([]);
-
-
-  useEffect(() => {
-    setTimeout(() => {
-      loadData();
-    }, 2000); 
-  }, [])
-
-  async function loadData() {
-    const comingdata = await api.get(`s=${props.data}`);
-    setData(comingdata);
-    console.log(comingdata)
-  }
-
-  return (
-    <Section>
-      {(
->>>>>>> a21240d9994c1948686cb4f66307e479c560e513
         <ul className="movie-list">
           {listMovie.data.Search.map(movie => (
             <li key={movie.imdbID} className="resume-movie">
@@ -92,11 +67,8 @@ const ListMovies = async (props) => {
             </li>
           ))}
         </ul>
-<<<<<<< HEAD
       ) : (
         <h1>Filme Não Encontrado</h1>
-=======
->>>>>>> a21240d9994c1948686cb4f66307e479c560e513
       )}
     </Section>
   );
