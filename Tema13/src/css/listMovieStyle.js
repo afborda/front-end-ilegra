@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   margin-top: 50px;
+
   .movie-list {
     display: flex;
     flex-wrap: wrap;
@@ -40,7 +41,7 @@ export const Section = styled.section`
     margin-top: 5px;
     padding: 5px;
     border-radius: 0px 0px 10px 10px;
-    transition: 0s background;
+    transition: background;
   }
 
   .button-details:hover {

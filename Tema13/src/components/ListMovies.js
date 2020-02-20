@@ -1,19 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { Section } from "../css/listMovieStyle";
-import useAxios from "axios-hooks";
+import ModalMovie from "../components/ModalMovie";
+<<<<<<< HEAD
+import api from "../service/api";
+=======
+import api from "../services/api";
+>>>>>>> 5482e31cca0380824397a3f7c4e849e7843dda97
 
 const ListMovies = props => {
-  const [{ data, loading }] = useAxios(
-    `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_SECRET_KYE}&s=${props.data}`
-  );
+  const [dataMovie, setDataMovie] = useState(props.data);
+  const [openModal, setOpenModal] = useState(false);
+  const [idMovie, setIdMovie] = useState("");
+  const [listMovie, setListMovie] = useState([]);
 
-  useEffect(() => {}, [data]);
+  const fetchUsers = async () => {
+    const getListMovie = await api.get(
+      `?apikey=${process.env.REACT_APP_SECRET_KYE}&s=${dataMovie}`
+    );
+    setListMovie(getListMovie);
+  };
+
+  useEffect(() => {
+    fetchUsers(listMovie);
+  }, [listMovie]);
+
+  const handleClick = e => {
+    setIdMovie(e.target.id);
+    setOpenModal(!openModal);
+  };
+
+  const validate = value => {
+    return value.Search !== undefined;
+  };
+
+  console.log("teste", listMovie);
 
   return (
     <Section>
-      {!loading ? (
+      {validate(listMovie) ? (
         <ul className="movie-list">
-          {data.Search.map(movie => (
+          {listMovie.data.Search.map(movie => (
             <li key={movie.imdbID} className="resume-movie">
               <img
                 className="resume-movie-img"
@@ -24,13 +50,25 @@ const ListMovies = props => {
               <p> Ano: {movie.Year}</p>
               <p>Tipo: {movie.Type}</p>
               <div className="button-details">
-                <button className="button-details--style">Saiba Mais!</button>
+                <button
+                  id={movie.imdbID}
+                  onClick={handleClick}
+                  className="button-details--style"
+                >
+                  Saiba Mais!
+                </button>
+                <ModalMovie
+                  open={openModal}
+                  onClose={handleClick}
+                  closeOnEsc={openModal}
+                  idMovie={idMovie}
+                ></ModalMovie>
               </div>
             </li>
           ))}
         </ul>
       ) : (
-        false
+        <h1>Filme Não Encontrado</h1>
       )}
     </Section>
   );

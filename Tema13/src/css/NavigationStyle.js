@@ -7,6 +7,7 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1200px;
 
   .logo-img {
     width: 80px;
@@ -26,9 +27,11 @@ export const Nav = styled.nav`
   .list-navigation {
     display: flex;
   }
+
   .list-navigation-item {
     padding: 20px 0;
   }
+
   .list-navigation-item a {
     padding: 30px 20px;
     color: #fff;

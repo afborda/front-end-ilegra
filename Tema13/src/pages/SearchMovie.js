@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navigation from "../components/Navigation";
 import { SearchMovieStyle } from "../css/SearchMovieStyle";
 import ListMovies from "../components/ListMovies";
@@ -10,12 +10,12 @@ const SearchMovie = () => {
     event.preventDefault();
   };
 
-  const handleChange = e => {
-    setMovieData(e.target.value);
+  const handleChange = event => {
+    setMovieData(event.target.value);
   };
 
   return (
-    <div>
+    <>
       <Navigation />
       <SearchMovieStyle>
         <h1 className="title">Buscar Filme</h1>
@@ -24,6 +24,7 @@ const SearchMovie = () => {
             className="search-form-input--style"
             type="text"
             placeholder="Informe nome do Filme"
+            onChange={handleChange}
           />
           <button
             className="search-form-button--style"
@@ -34,7 +35,7 @@ const SearchMovie = () => {
         </form>
       </SearchMovieStyle>
       {movieData !== "" ? <ListMovies data={movieData} /> : false}
-    </div>
+    </>
   );
 };
 

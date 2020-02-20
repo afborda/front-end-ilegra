@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const SearchMovieStyle = styled.section`
   background: #000;
-  width: 100%;
   height: 150px;
   display: flex;
   justify-content: center;
