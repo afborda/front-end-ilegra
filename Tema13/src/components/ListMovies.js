@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Section } from "../css/listMovieStyle";
 import ModalMovie from "../components/ModalMovie";
-<<<<<<< HEAD
 import api from "../service/api";
-=======
-import api from "../services/api";
->>>>>>> 5482e31cca0380824397a3f7c4e849e7843dda97
 
 const ListMovies = props => {
   const [dataMovie, setDataMovie] = useState(props.data);
