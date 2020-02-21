@@ -1,26 +1,24 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { Section } from "../css/listMovieStyle";
 import ModalMovie from "../components/ModalMovie";
-import api from "../services/api";
+import api from "../service/api";
 
 const ListMovies = ({ data }) => {
   const [openModal, setOpenModal] = useState(false);
   const [idMovie, setIdMovie] = useState("");
   const [listMovie, setListMovie] = useState([]);
 
-  
-   
+
  
-
-
   const loadData = async () => {
     const getListMovie = await api.get(`/?apikey=${process.env.REACT_APP_SECRET_KYE}&s=${data}`);
-    setListMovie(getListMovie);
-    console.log(listMovie);
-
+    setListMovie(getListMovie.data);
   };
 
-  loadData();
+  useEffect(() => {
+    loadData();
+  }, [listMovie]);
+
 
   const handleClick = e => {
     setIdMovie(e.target.id);
@@ -28,14 +26,12 @@ const ListMovies = ({ data }) => {
   };
 
   const validate = value => {
-    return value.Search !== undefined;
+    return value !== undefined;
   };
-
-
 
   return (
     <Section>
-      {validate(listMovie) ? (
+      {validate(listMovie.Search) ? (
         <ul className="movie-list">
           {listMovie.Search.map(movie => (
             <li key={movie.imdbID} className="resume-movie">

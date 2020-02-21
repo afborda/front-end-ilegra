@@ -6,12 +6,15 @@ import ListMovies from "../components/ListMovies";
 const SearchMovie = () => {
   const [movieData, setMovieData] = useState("");
 
-  const searchMovieData = event => {
-    event.preventDefault();
+
+  const preventDefault = event => {
+
   };
 
-  const handleChange = event => {
-    setMovieData(event.target.value);
+  const handleSubmit = (event) => {
+    setMovieData(event.target.value)
+    console.log(movieData)
+
   };
 
   return (
@@ -19,17 +22,15 @@ const SearchMovie = () => {
       <Navigation />
       <SearchMovieStyle>
         <h1 className="title">Buscar Filme</h1>
-        <form className="search-form">
+        <form onSubmit={event => event.preventDefault()} className="search-form">
           <input
             className="search-form-input--style"
             type="text"
             placeholder="Informe nome do Filme"
-        
+            value={movieData}
+            onChange={handleSubmit}
           />
-          <button
-            className="search-form-button--style"
-            onClick={()=> setMovieData('hulk')}
-          >
+          <button className="search-form-button--style">
             Pesquisar
           </button>
         </form>
