@@ -1,21 +1,23 @@
-import React, { useState } from "react";
+import React, { useState,  useEffect } from "react";
 import Navigation from "../components/Navigation";
 import { SearchMovieStyle } from "../css/SearchMovieStyle";
 import ListMovies from "../components/ListMovies";
 
 const SearchMovie = () => {
-  const [movieData, setMovieData] = useState("");
-
+  const [movieData, setMovieData] = useState('');
+  const [inputText, setInputText] = useState('');
 
   const preventDefault = event => {
 
   };
 
-  const handleSubmit = (event) => {
-    setMovieData(event.target.value)
+  const handleSubmit = () => {
+    setMovieData(inputText)
     console.log(movieData)
-
   };
+
+ 
+ //tinha esquecido do preventDefault aii o negocio nao parava de renderizar sempre porque é um form    #raiva hahahahah
 
   return (
     <>
@@ -27,10 +29,10 @@ const SearchMovie = () => {
             className="search-form-input--style"
             type="text"
             placeholder="Informe nome do Filme"
-            value={movieData}
-            onChange={handleSubmit}
+            value={inputText}
+            onChange={event => setInputText(event.target.value)}
           />
-          <button className="search-form-button--style">
+          <button onClick={handleSubmit} className="search-form-button--style">
             Pesquisar
           </button>
         </form>
