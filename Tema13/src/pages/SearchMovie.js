@@ -24,11 +24,11 @@ const SearchMovie = () => {
             className="search-form-input--style"
             type="text"
             placeholder="Informe nome do Filme"
-            onChange={handleChange}
+        
           />
           <button
             className="search-form-button--style"
-            onClick={searchMovieData}
+            onClick={()=> setMovieData('hulk')}
           >
             Pesquisar
           </button>

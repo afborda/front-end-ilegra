@@ -1,7 +1,7 @@
-const axios = require("axios").default;
+const axios = require("axios");
 
 const api = axios.create({
-  baseURL: `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_SECRET_KYE}&`,
+  baseURL: `http://www.omdbapi.com`,
 })
 // const getMovies = value => {
 //   axios
