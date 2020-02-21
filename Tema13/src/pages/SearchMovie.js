@@ -1,4 +1,4 @@
-import React, { useState,  useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import { SearchMovieStyle } from "../css/SearchMovieStyle";
 import ListMovies from "../components/ListMovies";
@@ -7,17 +7,13 @@ const SearchMovie = () => {
   const [movieData, setMovieData] = useState('');
   const [inputText, setInputText] = useState('');
 
-  const preventDefault = event => {
-
-  };
 
   const handleSubmit = () => {
     setMovieData(inputText)
     console.log(movieData)
   };
 
- 
- //tinha esquecido do preventDefault aii o negocio nao parava de renderizar sempre porque é um form    #raiva hahahahah
+  //tinha esquecido do preventDefault aii o negocio nao parava de renderizar sempre porque é um form    #raiva hahahahah
 
   return (
     <>
