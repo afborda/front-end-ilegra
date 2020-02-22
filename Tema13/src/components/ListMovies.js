@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Section } from "../css/listMovieStyle";
 import ModalMovie from "../components/ModalMovie";
-import api from "../service/api"; // aqui estava services ao inves de service no singular
+import GetMovies from "../services/GetMovies";
 
 const ListMovies = ({ data }) => {
   const [openModal, setOpenModal] = useState(false);
   const [idMovie, setIdMovie] = useState("");
   const [listMovie, setListMovie] = useState([]);
 
-  console.log(data);
-
   const loadData = async () => {
-    const getListMovie = await api.get(
-      `/?apikey=${process.env.REACT_APP_SECRET_KYE}&s=${data}`
-    ); //coloquei toda a rota depois do ".com/";
+    const getListMovie = await GetMovies(data);
     setListMovie(getListMovie.data);
   };
 
