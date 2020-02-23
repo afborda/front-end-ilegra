@@ -1,34 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-responsive-modal";
-import useAxios from "axios-hooks";
 import { Section } from "../css/ModalMoviesStyle";
+import GetDetails from "../services/GetDetails";
 
-const ModalMovie = props => {
-  const [{ data }] = useAxios(
-    `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_SECRET_KYE}&i=${props.idMovie}`
-  );
+const ModalMovie = ({ id, open, onClose, closeOnEsc }) => {
+  const [dataMovies, setDataMovies] = useState();
+
+  const loadData = async () => {
+    const getDetails = await GetDetails(id);
+    setDataMovies(getDetails.data);
+  };
+
+  useEffect(() => {
+    loadData();
+  }, [id]);
 
   return (
-    <Modal
-      open={props.open}
-      onClose={props.onClose}
-      closeOnEsc={props.closeOnEsc}
-      center
-    >
+    <Modal open={open} onClose={onClose} closeOnEsc={closeOnEsc} center>
       <div>
         <h1>
-          {data !== undefined ? (
+          {dataMovies !== undefined ? (
             <Section>
-              <h1>{data.Title}</h1>
-              <img src={data.Poster} alt={data.Title} />
+              <h1>{dataMovies.Title}</h1>
+              <img src={dataMovies.Poster} alt={dataMovies.Title} />
               <div>
-                <p>Release: {data.Released}</p>
-                <p>Tempo de Duração: {data.Runtime}</p>
-                <p>Genero: {data.Genre}</p>
-                <p>Diretor: {data.Director}</p>
-                <p>Limgua Nativa: {data.Language}</p>
-                <p>Pontuação: {data.Metascore}</p>
-                <p>Numero de Votos: {data.imdbVotes}</p>
+                <p>Release: {dataMovies.Released}</p>
+                <p>Tempo de Duração: {dataMovies.Runtime}</p>
+                <p>Genero: {dataMovies.Genre}</p>
+                <p>Diretor: {dataMovies.Director}</p>
+                <p>Nativa: {dataMovies.Language}</p>
+                <p>Pontuação: {dataMovies.Metascore}</p>
+                <p>Numero de Votos: {dataMovies.imdbVotes}</p>
               </div>
             </Section>
           ) : (

@@ -14,7 +14,9 @@ export const Section = styled.section`
     background: #1c1c1c;
     border-radius: 10px;
     margin: 10px;
-    width: 300px;
+    width: 220px;
+    flex-direction: column;
+    justify-content: space-between;
 
     & h2 {
       padding: 5px;
@@ -29,8 +31,8 @@ export const Section = styled.section`
   }
 
   .resume-movie-img {
-    width: 300px;
-    height: 450px;
+    width: 220px;
+    height: 280px;
   }
 
   .button-details {

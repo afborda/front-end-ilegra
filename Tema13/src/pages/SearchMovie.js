@@ -1,39 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navigation from "../components/Navigation";
 import { SearchMovieStyle } from "../css/SearchMovieStyle";
 import ListMovies from "../components/ListMovies";
 
 const SearchMovie = () => {
-  const [movieData, setMovieData] = useState('');
-  const [inputText, setInputText] = useState('');
+  const [movieData, setMovieData] = useState("");
 
-
-  const handleSubmit = () => {
-    setMovieData(inputText)
-    console.log(movieData)
+  const searchMovieData = event => {
+    setMovieData(event.target.value);
+    event.preventDefault();
   };
 
-  //tinha esquecido do preventDefault aii o negocio nao parava de renderizar sempre porque é um form    #raiva hahahahah
+  const handleChange = event => {
+    setMovieData(event.target.value);
+  };
 
   return (
     <>
       <Navigation />
       <SearchMovieStyle>
         <h1 className="title">Buscar Filme</h1>
-        <form onSubmit={event => event.preventDefault()} className="search-form">
+        <form className="search-form">
           <input
             className="search-form-input--style"
             type="text"
             placeholder="Informe nome do Filme"
-            value={inputText}
-            onChange={event => setInputText(event.target.value)}
+            onChange={handleChange}
           />
-          <button onClick={handleSubmit} className="search-form-button--style">
+          <button
+            className="search-form-button--style"
+            onClick={searchMovieData}
+          >
             Pesquisar
           </button>
         </form>
       </SearchMovieStyle>
-      {movieData !== "" ? <ListMovies data={movieData} /> : false}
+      {movieData !== "" ? (
+        <ListMovies data={movieData} />
+      ) : (
+        <h1>Não foi Possivel encontrar filmes!</h1>
+      )}
     </>
   );
 };

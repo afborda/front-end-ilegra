@@ -8,7 +8,7 @@ export const SearchMovieStyle = styled.section`
   align-items: center;
 
   .search-form {
-    width: 60%;
+    max-width: 300px;
     height: 50px;
     display: flex;
     align-items: center;
