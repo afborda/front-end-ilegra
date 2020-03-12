@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react';
 
 import {View, Text} from 'react-native';
-import getMovies from '../services/GetMovies';
+import mostPopularMovies from '../services/MostPopularMovies';
 import LoadList from './LoadList';
+import {styles} from '../styles/ListItensStyles';
 
 const ListItens = () => {
   const [listMovies, setListMovies] = useState([]);
 
   const loadData = async () => {
-    const getListMovies = await getMovies();
+    const getListMovies = await mostPopularMovies();
     setListMovies(getListMovies.data.tv_shows);
-    console.log('Teste', listMovies);
   };
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const ListItens = () => {
 
   return (
     <View>
-      <Text>Abner Fonseca Home</Text>
+      <Text style={styles.titlePage}>Populares</Text>
       <LoadList data={listMovies} />
     </View>
   );

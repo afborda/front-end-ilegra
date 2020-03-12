@@ -1,27 +1,37 @@
 import React from 'react';
 
-import {View, Text} from 'react-native';
+import {View, Text, Image, ScrollView} from 'react-native';
+import {styles} from '../styles/LoadListStyles';
 
 const LoadList = ({data}) => {
-  console.log(data);
-
-  const validate = value => {
+  const validate = () => {
     return data !== [];
   };
 
   return (
     <View>
       <View>
-        <Text>Lista de Filmes</Text>
-        {validate ? (
-          data.map(item => (
-            <View key={item.id}>
-              <Text>{item.name}</Text>
-            </View>
-          ))
-        ) : (
-          <Text>Abner</Text>
-        )}
+        <ScrollView>
+          <View style={styles.listMovie}>
+            {validate ? (
+              data.map(item => (
+                <View key={item.id} style={styles.backgroundItem}>
+                  <View style={styles.movieItem}>
+                    <Text numberOfLines={2} style={styles.nameMovie}>
+                      {item.name}
+                    </Text>
+                    <Image
+                      style={styles.imageMovie}
+                      source={{uri: item.image_thumbnail_path}}
+                    />
+                  </View>
+                </View>
+              ))
+            ) : (
+              <Text>Não Encontrado</Text>
+            )}
+          </View>
+        </ScrollView>
       </View>
     </View>
   );

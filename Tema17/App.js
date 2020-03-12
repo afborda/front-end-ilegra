@@ -1,8 +1,5 @@
-import React from 'react';
+import {createAppContainer} from 'react-navigation';
 
-import {View} from 'react-native';
-import Home from './src/pages/Home';
+import MainNavigator from './src/navigator/MainNavigator';
 
-const App = () => <Home />;
-
-export default App;
+export default createAppContainer(MainNavigator);
