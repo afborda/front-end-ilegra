@@ -1,0 +1,39 @@
+<div class="login-items">
+  <form [formGroup]="formlogin" (ngSubmit)="onSubmit()" class="from-items">
+    <div class="logo-netflix">
+      <img
+        class="logo-netflix--style"
+        src="../../assets/img/netflix.png"
+        alt="logo Netflix"
+      />
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label class="label">Email</mat-label>
+      <input
+        formControlName="login"
+        readonly="false"
+        class="inputLogin"
+        type="email"
+        matInput
+        placeholder="exempli@exemplo.com"
+        value=""
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label class="label">Senha</mat-label>
+      <input
+        formControlName="password"
+        class="inputLogin"
+        type="password"
+        matInput
+        placeholder="Senha"
+        readonly="false"
+      />
+    </mat-form-field>
+    <button class="button--style" mat-button type="submit" color="primary">
+      ENTRAR
+    </button>
+  </form>
+</div>

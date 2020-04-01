@@ -1,0 +1,49 @@
+<div class="movies wrapper">
+  <h1 class="category-type">Terror</h1>
+  <div class="cards">
+    <div class="item" *ngFor="let movie of Movies">
+      <div *ngIf="movie.category === 'fear'">
+        <a [routerLink]="['/movieplay']">
+          <img
+            class="card-Items"
+            mat-card-image
+            [src]="movie.Poster"
+            alt="movie.Title"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="category-type">Ação</h1>
+  <div class="cards">
+    <div class="item" *ngFor="let movie of Movies">
+      <div *ngIf="movie.category === 'action'">
+        <a [routerLink]="['/movieplay']">
+          <img
+            class="card-Items"
+            mat-card-image
+            [src]="movie.Poster"
+            alt="movie.Title"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="category-type">Amor</h1>
+  <div class="cards">
+    <div class="item" *ngFor="let movie of Movies">
+      <div *ngIf="movie.category === 'love'">
+        <a [routerLink]="['/movieplay']">
+          <img
+            class="card-Items"
+            mat-card-image
+            [src]="movie.Poster"
+            alt="movie.Title"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
